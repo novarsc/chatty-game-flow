@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				deepThink: {
+					dark: '#0F1629',
+					primary: '#6365FF',
+					secondary: '#4146B5',
+					accent: '#7F5AF0',
+					highlight: '#2CB67D',
+					error: '#F25042',
+					surface: '#16213E',
+					surfaceHover: '#1A2649'
 				}
 			},
 			borderRadius: {
@@ -70,25 +81,45 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'pulse-slow': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.5' }
+				},
+				'gradient-shift': {
+					'0%': { backgroundPosition: '0% 50%' },
+					'50%': { backgroundPosition: '100% 50%' },
+					'100%': { backgroundPosition: '0% 50%' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'glow': {
+					'0%, 100%': { boxShadow: '0 0 5px rgba(99, 101, 255, 0.6)' },
+					'50%': { boxShadow: '0 0 20px rgba(99, 101, 255, 0.8)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-slow': 'pulse-slow 2s ease-in-out infinite',
+				'gradient-shift': 'gradient-shift 3s ease infinite',
+				'float': 'float 6s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'cyber-grid': 'linear-gradient(rgba(99, 101, 255, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(99, 101, 255, 0.15) 1px, transparent 1px)'
+			},
+			backgroundSize: {
+				'cyber-grid': '30px 30px'
 			}
 		}
 	},
